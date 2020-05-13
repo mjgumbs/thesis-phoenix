@@ -8,6 +8,7 @@ node_modules
 npm-debug.log
 yarn-error.log
 .DS_Store
+.elixir_ls/
 nohup.out
 yarn-error.log
 package-lock.json

@@ -1,6 +1,7 @@
 defmodule Thesis.Mixfile do
   use Mix.Project
-  @version "0.3.4" # REMEMBER TO UPDATE package.json and both READMEs!
+  # REMEMBER TO UPDATE package.json and both READMEs!
+  @version "0.3.4"
 
   def project do
     [
@@ -8,8 +9,8 @@ defmodule Thesis.Mixfile do
       version: @version,
       elixir: ">= 1.4.0",
       description: description(),
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
+      build_embedded: Mix.env() == :prod,
+      start_permanent: Mix.env() == :prod,
       deps: deps(),
       package: package(),
       dialyzer: [plt_add_deps: :transitive]
@@ -22,9 +23,9 @@ defmodule Thesis.Mixfile do
 
   defp deps do
     [
-      {:phoenix, ">= 1.2.0"},
-      {:phoenix_html, ">= 2.0.0"},
-      {:ecto, ">= 2.0.0"},
+      {:phoenix, ">= 1.5.0"},
+      {:phoenix_html, ">= 2.13.0"},
+      {:ecto, ">= 3.4.0"},
       {:plug, ">= 1.0.0"},
       {:poison, ">= 1.0.0"},
       {:httpoison, ">= 0.11.0"},
@@ -33,7 +34,7 @@ defmodule Thesis.Mixfile do
       {:ex_doc, ">= 0.12.0", only: [:dev]},
       {:earmark, ">= 0.2.0", only: [:dev]},
       {:dialyxir, ">= 0.3.5", only: [:dev]},
-      {:credo, ">= 0.7.4", only: [:dev]},
+      {:credo, ">= 0.7.4", only: [:dev]}
     ]
   end
 
@@ -51,7 +52,7 @@ defmodule Thesis.Mixfile do
       maintainers: ["Jamon Holmgren", "Yulian Glukhenko", "Ken Miller", "Daniel Berkompas"],
       links: %{
         "GitHub" => "https://github.com/infinitered/thesis-phoenix",
-        "Docs" => "https://hexdocs.pm/thesis/#{@version}/api-reference.html",
+        "Docs" => "https://hexdocs.pm/thesis/#{@version}/api-reference.html"
         # "Tutorials" => "https://infinite.red/thesis/" # TODO
       }
     ]
